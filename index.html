@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<title>Bhava 2026 | Freshers Talent Show</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+:root{
+    --bg-dark:#0b0604;
+    --bg-black:#120c09;
+    --gold:#c98a2e;
+    --gold-light:#e8b25a;
+    --bronze:#8a5321;
+    --silver:#8d8680;
+    --text:#f5e7d0;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--bg-dark);
+    color:var(--text);
+    font-family:'Poppins',sans-serif;
+}
+
+/* HERO */
+
+.hero{
+    height:100vh;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.75),
+        rgba(0,0,0,.75)
+    ),
+    url('images/mask-bg.png');
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+.hero-content{
+    background:transparent;
+    backdrop-filter:none;
+    padding:30px;
+}
+
+.hero-content h1{
+    font-family:'Cinzel',serif;
+    font-size:6rem;
+    color:var(--gold-light);
+    letter-spacing:8px;
+    text-transform:uppercase;
+    text-shadow:0 0 30px rgba(201,138,46,.5);
+}
+
+.hero-content p{
+    font-size:1.3rem;
+    margin:20px 0;
+    color:#f3d8a3;
+}
+
+/* BUTTON */
+
+.btn{
+    display:inline-block;
+    padding:14px 30px;
+
+    background:linear-gradient(
+    135deg,
+    var(--gold),
+    var(--gold-light));
+
+    color:#111;
+    text-decoration:none;
+    border-radius:40px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 0 25px rgba(232,178,90,.5);
+}
+
+/* SECTIONS */
+
+section{
+    padding:90px 10%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+    font-size:2.5rem;
+    color:var(--gold-light);
+    font-family:'Cinzel',serif;
+    letter-spacing:3px;
+}
+
+.about{
+    text-align:center;
+    max-width:900px;
+    margin:auto;
+    line-height:1.8;
+}
+.about-subtitle{
+    text-align:center;
+    color:var(--gold-light);
+    font-size:1.3rem;
+    font-weight:500;
+    margin-bottom:25px;
+    letter-spacing:1px;
+}
+
+/* COUNTDOWN */
+
+.countdown{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.box{
+    background:rgba(18,12,9,.95);
+
+    border:1px solid var(--gold);
+
+    padding:25px;
+    border-radius:20px;
+    min-width:140px;
+
+    text-align:center;
+
+    box-shadow:
+    0 0 15px rgba(201,138,46,.2);
+}
+
+.box h3{
+    font-size:2.5rem;
+    color:var(--gold-light);
+}
+
+/* VENUE */
+
+.venue-card{
+    position:relative;
+    width:100%;
+    max-width:450px;
+    margin:auto;
+    border-radius:25px;
+    overflow:hidden;
+    border:1px solid var(--gold);
+    box-shadow:0 0 20px rgba(201,138,46,.2);
+}
+
+.venue-card img{
+    width:100%;
+    height:650px;
+    object-fit:cover;
+    display:block;
+}
+
+.venue-overlay{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    padding:30px 20px;
+
+    background:linear-gradient(
+        transparent,
+        rgba(0,0,0,.95)
+    );
+
+    text-align:center;
+}
+
+.venue-overlay h3{
+    color:var(--gold-light);
+    font-size:2rem;
+    margin-bottom:5px;
+}
+
+.venue-overlay p{
+    color:#f5e7d0;
+    margin-bottom:25px;
+}
+
+.venue-info{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.info-box{
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(8px);
+
+    padding:12px 18px;
+    border-radius:12px;
+    min-width:100px;
+}
+
+.info-box span{
+    display:block;
+    font-size:.8rem;
+    color:#ccc;
+}
+
+.info-box strong{
+    color:var(--gold-light);
+}
+
+/* CARDS */
+
+.schedule{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:rgba(18,12,9,.95);
+
+    border:1px solid var(--gold);
+
+    padding:30px;
+    border-radius:20px;
+
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 25px rgba(201,138,46,.3);
+}
+
+.card h3{
+    color:var(--gold-light);
+    margin-bottom:10px;
+}
+
+/* GALLERY */
+
+.gallery-item{  position:relative;
+    height:250px; /* controls image size */
+    overflow:hidden;
+    border-radius:15px;
+    position:relative;
+    overflow:hidden;
+    border-radius:15px;
+}
+.gallery-item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+.overlay{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,0.35);
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+    color:white;
+
+    opacity:0;
+    transition:.4s ease;
+}
+
+.overlay h3{
+    color:var(--gold-light);
+    margin-bottom:10px;
+    font-size:1.8rem;
+}
+
+.overlay p{
+    color:#f5e7d0;
+}
+
+.gallery-item:hover .overlay{
+    opacity:1;
+}
+
+/* CONTACT */
+
+.contact-box{
+    text-align:center;
+    font-size:1.1rem;
+    line-height:2;
+}
+
+/* SOCIAL MEDIA */
+
+.social-icons{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    margin-top:20px;
+}
+
+.social-icons a{
+    width:70px;
+    height:70px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:1px solid var(--gold);
+    border-radius:50%;
+
+    color:var(--gold-light);
+    font-size:2rem;
+
+    text-decoration:none;
+
+    transition:.3s;
+}
+
+.social-icons a:hover{
+    transform:translateY(-5px) scale(1.08);
+
+    background:linear-gradient(
+        135deg,
+        var(--gold),
+        var(--gold-light)
+    );
+
+    color:#111;
+
+    box-shadow:0 0 25px rgba(232,178,90,.5);
+}
+
+/* FOOTER */
+
+footer{
+    background:#050302;
+    border-top:1px solid var(--gold);
+    text-align:center;
+    padding:35px;
+}
+
+/* MOBILE */
+
+@media(max-width:480px){
+
+.hero-content h1{
+    font-size:2.2rem;
+    letter-spacing:2px;
+}
+
+.hero-content p{
+    font-size:0.9rem;
+}
+.btn{
+        padding:12px 24px;
+        font-size:0.9rem;
+    }
+
+.section-title{
+    font-size:2rem;
+}
+.box{
+    min-width:100px;
+}
+}
+
+</style>
+</head>
+<body>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Bhava</h1>
+        <p>Freshers Talent Show | Faculty of Technology</p>
+        <a href="#about" class="btn">Explore Event</a>
+    </div>
+</section>
+
+<section id="about">
+    <h2 class="section-title">About Bhava</h2>
+    <h3 class="about-subtitle">Where Fresh Talent Meets the Spotlight</h3>
+    <div class="about">
+        <p>
+            භාව (Bhava) is a celebration of talent, creativity,
+            and unity among students. Join us for a night of
+            music, dance, drama, and unforgettable memories.
+        </p>
+    </div>
+   
+</section>
+
+<section>
+    <h2 class="section-title">Countdown</h2>
+
+    <div class="countdown">
+        <div class="box">
+            <h3 id="days">00</h3>
+            <p>Days</p>
+        </div>
+
+        <div class="box">
+            <h3 id="hours">00</h3>
+            <p>Hours</p>
+        </div>
+
+        <div class="box">
+            <h3 id="minutes">00</h3>
+            <p>Minutes</p>
+        </div>
+
+        <div class="box">
+            <h3 id="seconds">00</h3>
+            <p>Seconds</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2 class="section-title">Event Schedule</h2>
+
+    <div class="schedule">
+        <div class="card">
+            <h3>Opening Ceremony</h3>
+            <p>5:00 PM</p>
+        </div>
+
+        <div class="card">
+            <h3>Talent Performances</h3>
+            <p>6:00 PM</p>
+        </div>
+
+        <div class="card">
+            <h3>Special Guest Show</h3>
+            <p>8:00 PM</p>
+        </div>
+
+        <div class="card">
+            <h3>Awards & Closing</h3>
+            <p>9:30 PM</p>
+        </div>
+    </div>
+</section>
+<section id="venue">
+    <h2 class="section-title">Venue</h2>
+
+    <div class="venue-card">
+
+        <img src="images/venue.JPG" alt="Event Venue">
+
+        <div class="venue-overlay">
+
+            <h3>Main Auditorium</h3>
+            <p>Faculty of Technology</p>
+
+            <div class="venue-info">
+
+                <div class="info-box">
+                    <span>Date</span>
+                    <strong>24 July 2026</strong>
+                </div>
+
+                <div class="info-box">
+                    <span>Time</span>
+                    <strong>5:00 PM</strong>
+                </div>
+
+                <div class="info-box">
+                    <span>Entry</span>
+                    <strong>Free</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section>
+    <h2 class="section-title">Programes</h2>
+
+    <div class="gallery">
+
+        <div class="gallery-item">
+            <img src="images/music1.JPG" alt="">
+            <div class="overlay">
+                <h3>Music</h3>
+                <p>Feel every rhythm</p>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/dance.JPG" alt="">
+            <div class="overlay">
+                <h3>Dance</h3>
+                <p>Express every emotion</p>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/drama.JPG" alt="">
+            <div class="overlay">
+                <h3>Drama</h3>
+                <p>Stories brought to life</p>
+            </div>
+        </div>
+
+        <div class=" gallery-item">
+            <img src="images/martial.jpg" alt="">
+            <div class="overlay">
+                <h3>Martial Arts</h3>
+                <p>Discover the extraordinary</p>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/talent.JPG" alt="">
+            <div class="overlay">
+                <h3>Other Talents</h3>
+                <p>Discover the extraordinary</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="social">
+    <h2 class="section-title">Connect With Us</h2>
+
+    <div class="social-icons">
+
+        <a href="https://instagram.com/yourpage" target="_blank">
+            <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="https://facebook.com/yourpage" target="_blank">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+
+        <a href="https://youtube.com/@yourchannel" target="_blank">
+            <i class="fab fa-youtube"></i>
+        </a>
+
+        <a href="https://tiktok.com/@youraccount" target="_blank">
+            <i class="fab fa-tiktok"></i>
+        </a>
+
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Bhava | Faculty of Technology 10<sup>th</th></sup> Batch</p>
+</footer>
+
+<script>
+const eventDate = new Date("July 24, 2026 12:00:00").getTime();
+
+setInterval(() => {
+
+const now = new Date().getTime();
+const distance = eventDate - now;
+
+const days = Math.floor(distance/(1000*60*60*24));
+const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+const minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+const seconds = Math.floor((distance%(1000*60))/1000);
+
+document.getElementById("days").innerHTML = days;
+document.getElementById("hours").innerHTML = hours;
+document.getElementById("minutes").innerHTML = minutes;
+document.getElementById("seconds").innerHTML = seconds;
+
+},1000);
+</script>
+
+</body>
+</html>
