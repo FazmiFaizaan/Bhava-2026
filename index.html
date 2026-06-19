@@ -3,26 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Bhava 2026 Freshers Talent Show">
-<meta name="keywords" content="Bhava 2026, Talent Show, Freshers">
-<meta name="author" content="FAIZAAN">
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <title>Bhava 2026 | Freshers Talent Show</title>
 
 <style>
 
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap');
 
 :root{
-    --bg-dark:#0b0604;
-    --bg-black:#120c09;
-    --gold:#c98a2e;
-    --gold-light:#e8b25a;
-    --bronze:#8a5321;
-    --silver:#8d8680;
-    --text:#f5e7d0;
+    --bg-dark:#050505;
+    --bg-black:#000000;
+
+    --gold:#D4A017;       /* Mask Yellow */
+    --gold-light:#F2C94C;
+
+    --text:#F5F5F5;
 }
+    
+
 
 *{
     margin:0;
@@ -34,11 +33,23 @@ html{
     scroll-behavior:smooth;
 }
 
+
 body{
-    background:var(--bg-dark);
+    background:
+    linear-gradient(
+        rgba(0,0,0,.88),
+        rgba(0,0,0,.88)
+    ),
+    url('images/mask-bg.png');
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+
     color:var(--text);
     font-family:'Poppins',sans-serif;
 }
+
 
 /* HERO */
 
@@ -69,19 +80,27 @@ body{
 }
 
 .hero-content h1{
-    font-family:'Cinzel',serif;
+    font-family:'Cinzel Decorative', serif;
     font-size:6rem;
-    color:var(--gold-light);
+    color:#F2C94C;
     letter-spacing:8px;
     text-transform:uppercase;
-    text-shadow:0 0 30px rgba(201,138,46,.5);
 }
 
 .hero-content p{
     font-size:1.3rem;
     margin:20px 0;
     color:#f3d8a3;
+} 
+
+.hero-center h1{
+    font-family:'Cinzel Decorative', serif;
+    font-size:6rem;
+    color:#F2C94C;
+    letter-spacing:10px;
+    text-transform:uppercase;
 }
+
 
 /* BUTTON */
 
@@ -110,16 +129,27 @@ body{
 
 section{
     padding:90px 10%;
+    background:transparent;
+    opacity:0;
+    transform:translateY(50px);
+    transition:1s;
+}
+
+section.show{
+    opacity:1;
+    transform:translateY(0);
 }
 
 .section-title{
     text-align:center;
     margin-bottom:50px;
     font-size:2.5rem;
-    color:var(--gold-light);
-    font-family:'Cinzel',serif;
+    color:#F2C94C; /* Mask Yellow */
+    font-family:'Cinzel', serif;
     letter-spacing:3px;
 }
+
+
 
 .about{
     text-align:center;
@@ -404,17 +434,132 @@ footer{
     min-width:100px;
 }
 }
+/* navbar */
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:25px 8%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    z-index:1000;;
+
+    background:rgba(0,0,0,.55);
+    backdrop-filter:blur(12px);
+}
+
+.navbar ul{
+    display:flex;
+    gap:40px;
+    list-style:none;
+}
+
+.navbar a{
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+}
+
+.hero{
+    height:100vh;
+    background:#000;
+    position:relative;
+    overflow:hidden;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.hero-logo{
+    position:absolute;
+    width:550px;
+    max-width:85%;
+    animation:float 6s ease-in-out infinite;
+}
+
+.hero-center{
+    text-align:center;
+    z-index:2;
+}
+
+.hero-center h1{
+    font-size:5rem;
+    letter-spacing:10px;
+    color:white;
+}
+
+.hero-center p{
+    color:#ddd;
+    margin-top:15px;
+}
+
+.scroll-down{
+    position:absolute;
+    bottom:40px;
+    color:white;
+    letter-spacing:3px;
+}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-15px);
+    }
+}
+
+.card,
+.box,
+.venue-card{
+    background:rgba(0,0,0,.65);
+    backdrop-filter:blur(10px);
+
+    border:1px solid var(--gold);
+}
+
+.card:hover,
+.box:hover,
+.venue-card:hover{
+    box-shadow:0 0 25px rgba(201,138,46,.45);
+}
 
 </style>
 </head>
 <body>
 
-<section class="hero">
-    <div class="hero-content">
-        <h1>Bhava</h1>
-        <p>Freshers Talent Show | Faculty of Technology</p>
-        <a href="#about" class="btn">Explore Event</a>
+    <nav class="navbar">
+
+    <div class="nav-logo">
+        BHAVA
     </div>
+
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#venue">Venue</a></li>
+        <li><a href="#social">Contact</a></li>
+    </ul>
+
+</nav>
+
+<section class="hero">
+
+    <img src="images/mask.jpg" class="hero-logo">
+
+    <div class="hero-center">
+        <h1>BHAVA-2026</h1>
+        <p>Where Fresh Talent Meets The Spotlight</p>
+    </div>
+
+    <div class="scroll-down">
+        Scroll Down
+    </div>
+
 </section>
 
 <section id="about">
@@ -570,15 +715,17 @@ footer{
 
     <div class="social-icons">
 
-       
+        
 
-        <a href="https://www.facebook.com/profile.php?id=100087399455068" target="_blank">
+        <a href="https://facebook.com/භාව" target="_blank">
             <i class="fab fa-facebook-f"></i>
         </a>
 
         <a href="https://youtube.com/@bhawauor2024?si=TRpxJK0A0yna_C3O" target="_blank">
             <i class="fab fa-youtube"></i>
         </a>
+
+        
 
     </div>
 </section>
@@ -606,6 +753,20 @@ document.getElementById("minutes").innerHTML = minutes;
 document.getElementById("seconds").innerHTML = seconds;
 
 },1000);
+</script>
+
+<script>
+const observer = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+        }
+    });
+});
+
+document.querySelectorAll("section").forEach(el=>{
+    observer.observe(el);
+});
 </script>
 
 </body>
