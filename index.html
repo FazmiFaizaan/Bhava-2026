@@ -53,19 +53,16 @@ body{
 
 /* HERO */
 
-.hero.hero{
-    min-height:100vh;
+.hero{
+    position:relative;
+    height:100vh;
+    overflow:hidden;
 
     background:
     linear-gradient(
         rgba(0,0,0,.75),
         rgba(0,0,0,.75)
-    ),
-    url('images/mask.jpg');
-
-    background-size:cover;
-    background-position:center center;
-    background-repeat:no-repeat;
+    );
 
     display:flex;
     align-items:center;
@@ -411,13 +408,28 @@ footer{
     padding:35px;
 }
 
-/* MOBILE */
+/* floating mask */
+.floating-mask{
+    position:absolute;
+    width:500px;
+    max-width:80vw;
+    height:auto;
+
+    opacity:0.35;
+
+    right:5%;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    pointer-events:none;
+}
 
 /* MOBILE */
 
 @media(max-width:480px){
 
-    .hero{
+.hero{
         background-size:cover;
         background-position:center top;
         min-height:100vh;
@@ -562,15 +574,12 @@ footer{
 
 <section class="hero">
 
-    <img src="images/mask.jpg" class="hero-logo">
+    <img src="images/mask.jpg" class="floating-mask" alt="Mask">
 
-    <div class="hero-center">
-        <h1>BHAVA-2026</h1>
-        <p>Where Fresh Talent Meets The Spotlight</p>
-    </div>
-
-    <div class="scroll-down">
-        Scroll Down
+    <div class="hero-content">
+        <h1>Bhava</h1>
+        <p>Freshers Talent Show | Faculty of Technology</p>
+        <a href="#about" class="btn">Explore Event</a>
     </div>
 
 </section>
