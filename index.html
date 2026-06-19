@@ -40,7 +40,7 @@ body{
         rgba(0,0,0,.88),
         rgba(0,0,0,.88)
     ),
-    
+    url('images/mask-bg.png');
 
     background-size:cover;
     background-position:center;
@@ -54,15 +54,18 @@ body{
 /* HERO */
 
 .hero{
-    position:relative;
     height:100vh;
-    overflow:hidden;
 
     background:
     linear-gradient(
         rgba(0,0,0,.75),
         rgba(0,0,0,.75)
-    );
+    ),
+    url('images/mask-bg.png');
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
 
     display:flex;
     align-items:center;
@@ -407,70 +410,29 @@ footer{
     padding:35px;
 }
 
-/* floating mask */
-.floating-mask{
-    position:absolute;
-    top:50%;
-    left:50%;
-
-    width:420px;
-    max-width:80vw;
-
-    transform:translate(-50%, -50%);
-
-    opacity:0.28;
-
-    pointer-events:none;
-
-    /* HERO STATUE EFFECT */
-    filter: drop-shadow(0 0 40px rgba(242,201,76,0.35));
-
-    animation: statueFloat 6s ease-in-out infinite;
-    z-index:1;
-}
-
-/* floating motion */
-@keyframes statueFloat{
-    0%, 100%{
-        transform:translate(-50%, -50%) translateY(0);
-    }
-    50%{
-        transform:translate(-50%, -50%) translateY(-18px);
-    }
-}
 /* MOBILE */
 
 @media(max-width:480px){
 
-.hero{
-        background-size:cover;
-        background-position:center top;
-        min-height:100vh;
-        padding:20px;
-    }
+.hero-content h1{
+    font-size:2.2rem;
+    letter-spacing:2px;
+}
 
-    .hero-content h1{
-        font-size:2.5rem;
-        letter-spacing:2px;
-    }
-
-    .hero-content p{
-        font-size:0.9rem;
-    }
-
-    .btn{
+.hero-content p{
+    font-size:0.9rem;
+}
+.btn{
         padding:12px 24px;
         font-size:0.9rem;
     }
 
-    .section-title{
-        font-size:2rem;
-    }
-
-    .box{
-        min-width:100px;
-    }
-
+.section-title{
+    font-size:2rem;
+}
+.box{
+    min-width:100px;
+}
 }
 /* navbar */
 .navbar{
@@ -587,12 +549,15 @@ footer{
 
 <section class="hero">
 
-    <img src="images/mask.JPG" class="floating-mask" alt="Mask">
+    <img src="images/mask.jpg" class="hero-logo">
 
-    <div class="hero-content">
-        <h1>Bhava</h1>
-        <p>Freshers Talent Show | Faculty of Technology</p>
-        <a href="#about" class="btn">Explore Event</a>
+    <div class="hero-center">
+        <h1>BHAVA-2026</h1>
+        <p>Where Fresh Talent Meets The Spotlight</p>
+    </div>
+
+    <div class="scroll-down">
+        Scroll Down
     </div>
 
 </section>
