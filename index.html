@@ -40,7 +40,7 @@ body{
         rgba(0,0,0,.88),
         rgba(0,0,0,.88)
     ),
-    url('images/mask.jpg');
+    
 
     background-size:cover;
     background-position:center;
@@ -410,20 +410,34 @@ footer{
 /* floating mask */
 .floating-mask{
     position:absolute;
-    width:500px;
-    max-width:80vw;
-    height:auto;
-
-    opacity:0.35;
-
-    right:5%;
     top:50%;
+    left:50%;
 
-    transform:translateY(-50%);
+    width:420px;
+    max-width:80vw;
+
+    transform:translate(-50%, -50%);
+
+    opacity:0.28;
 
     pointer-events:none;
+
+    /* HERO STATUE EFFECT */
+    filter: drop-shadow(0 0 40px rgba(242,201,76,0.35));
+
+    animation: statueFloat 6s ease-in-out infinite;
+    z-index:1;
 }
 
+/* floating motion */
+@keyframes statueFloat{
+    0%, 100%{
+        transform:translate(-50%, -50%) translateY(0);
+    }
+    50%{
+        transform:translate(-50%, -50%) translateY(-18px);
+    }
+}
 /* MOBILE */
 
 @media(max-width:480px){
