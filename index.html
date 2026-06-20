@@ -40,7 +40,7 @@ body{
         rgba(0,0,0,.88),
         rgba(0,0,0,.88)
     ),
-    url('images/msk.jpg');
+    url('images/mask.jpg');
 
     background-size:cover;
     background-position:center;
@@ -101,6 +101,14 @@ body{
     text-transform:uppercase;
 }
 
+.hero-logo{
+  position:absolute;
+  width:550px;
+  max-width:85%;
+  animation:float 6s ease-in-out infinite;
+  z-index:1;   /* set to 1 to be behind .hero-center (which has z-index:2) */
+  /* or z-index:3 to bring it in front */
+}
 
 /* BUTTON */
 
